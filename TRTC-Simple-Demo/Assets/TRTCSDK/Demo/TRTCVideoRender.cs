@@ -145,7 +145,7 @@ namespace trtc
                     {
                         try
                         {
-                            _nativeTexture.Resize((int)_textureWidth, (int)_textureHeight);
+                            _nativeTexture.Reinitialize((int)_textureWidth, (int)_textureHeight);
                         }
                         catch (Exception e)
                         {

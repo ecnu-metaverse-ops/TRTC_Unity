@@ -174,7 +174,7 @@ namespace trtc
         public override void setCameraCaptureParam(TXCameraCaptureParam param)
         {
 #if UNITY_STANDALONE_WIN
-            ITXDeviceManagerNative.TRTCUnitySetCameraCaptureParam(mNativeObj, param.mode, param.width, param.height);
+        //     ITXDeviceManagerNative.TRTCUnitySetCameraCaptureParam(mNativeObj, param.mode, param.width, param.height);
 #endif
         }
     }
