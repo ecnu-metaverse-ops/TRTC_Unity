@@ -13,18 +13,6 @@ namespace TRTCCUnityDemo
         public event MuteAudioHandler DoMuteAudio;
         public event MuteVideoHandler DoMuteVideo;
 
-        public Text TitleText;
-        public Text AudioVolumeText;
-        public Text StatisText;
-        public Button RenderModeBtn;
-        public Button AudioBtn;
-        public Button VideoBtn;
-        public Sprite AudioOnImg;
-        public Sprite AudioOffImg;
-        public Sprite VideoOnImg;
-        public Sprite VideoOffImg;
-        public Sprite VideoRenderFillImg;
-        public Sprite VideoRenderFitImg;
         public TRTCVideoRender VideoRender;
 
         private string userIdStr;
@@ -33,19 +21,6 @@ namespace TRTCCUnityDemo
             set
             {
                 userIdStr = value;
-
-                if (string.IsNullOrEmpty(userIdStr))
-                {
-                    TitleText.text = "me";
-                    AudioBtn.gameObject.SetActive(false);
-                    VideoBtn.gameObject.SetActive(false);
-                }
-                else
-                {
-                    TitleText.text = userIdStr;
-                    AudioBtn.gameObject.SetActive(true);
-                    VideoBtn.gameObject.SetActive(true);
-                }
             }
         }
 
@@ -92,9 +67,8 @@ namespace TRTCCUnityDemo
 
         public UInt32 AudioVolume
         {
-            set
-            {
-                AudioVolumeText.text = string.Format("{0}", value);
+            set {
+                
             }
         }
 
@@ -102,7 +76,6 @@ namespace TRTCCUnityDemo
         {
             set
             {
-                AudioVolumeText.gameObject.SetActive(value);
             }
         }
 
@@ -110,7 +83,6 @@ namespace TRTCCUnityDemo
         {
             set
             {
-                StatisText.text = value;
             }
         }
 
@@ -118,7 +90,6 @@ namespace TRTCCUnityDemo
         {
             set
             {
-                StatisText.gameObject.SetActive(value);
             }
         }
 
@@ -140,7 +111,6 @@ namespace TRTCCUnityDemo
             else
                 videoFillMode = TRTCVideoFillMode.TRTCVideoFillMode_Fit;
             VideoRender.SetViewFillMode(videoFillMode);
-            RenderModeBtn.image.sprite = (videoFillMode == TRTCVideoFillMode.TRTCVideoFillMode_Fit ? VideoRenderFillImg : VideoRenderFitImg);
         }
 
         public void CellMuteAudioAction()
@@ -165,12 +135,10 @@ namespace TRTCCUnityDemo
 
         private void updateAudioBtn()
         {
-            AudioBtn.image.sprite = isAudioMute ? AudioOffImg : AudioOnImg;
         }
 
         private void updateVideoBtn()
         {
-            VideoBtn.image.sprite = isVideoMute ? VideoOffImg : VideoOnImg;
         }
     }
 }

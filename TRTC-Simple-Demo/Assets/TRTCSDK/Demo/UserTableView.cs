@@ -35,6 +35,10 @@ namespace TRTCCUnityDemo
 
         public void AddUser(string userId, TRTCVideoStreamType streamType)
         {
+            if (userId == "") {
+                return;
+            }
+
             ITRTCCloudImplement.RenderKey key = new ITRTCCloudImplement.RenderKey(userId, streamType);
             if (userViewCells.ContainsKey(key))
                 return;
@@ -95,26 +99,6 @@ namespace TRTCCUnityDemo
 
             UserTableViewCell tableViewCellScript = userViewCells[key];
             tableViewCellScript.AudioVolume = volume;
-        }
-
-        public void UpdateAudioVolumeVisible(bool value)
-        {
-            audioVolumeVisible = value;
-
-            foreach (UserTableViewCell tableViewCellScript in userViewCells.Values)
-            {
-                tableViewCellScript.AudioVolumeVisible = value;
-            }
-        }
-
-        public void UpdateUserStatisVisible(bool value)
-        {
-            userStatisVisible = value;
-
-            foreach (UserTableViewCell tableViewCellScript in userViewCells.Values)
-            {
-                tableViewCellScript.UserStatisVisible = value;
-            }
         }
 
         public void updateUserStatistics(string userId, TRTCVideoStreamType streamType, string statisText)
