@@ -31,7 +31,7 @@ namespace TRTCCUnityDemo
         /// <remarks>
         /// `SDKAppID` uniquely identifies a Tencent Cloud account.
         /// </remarks>
-        public const int SDKAPPID = 1600009938;
+        public const int SDKAPPID = 1600001646;
 
         /// <summary>
         /// Follow the steps below to obtain the key required for UserSig calculation.
@@ -44,7 +44,7 @@ namespace TRTCCUnityDemo
         /// Note: this method is for testing only. Before commercial launch, please migrate the UserSig calculation code and key to your backend server to prevent key disclosure and traffic stealing.
         /// Reference：https://cloud.tencent.com/document/product/647/17275#GetFromServer
         /// </remarks>
-        public const string SECRETKEY = @"6744e2b0e689a7d23d8c58e54869e41fa732189274422110fb0cf57b6dea1212";
+        public const string SECRETKEY = @"8e09ba37789b398e8138794f8f9aed84cad66dc71f5ac0ad89259cd29c9a8bd2";
 
         /// <summary>
         /// Signature validity period, which should not be set too short
