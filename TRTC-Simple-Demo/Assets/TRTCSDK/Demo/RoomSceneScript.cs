@@ -27,6 +27,9 @@ namespace TRTCCUnityDemo
         private ITRTCCloud mTRTCCloud;
 
         private SynchronizationContext MainContext;
+        
+        private const uint roomId = 123456789;
+        private const string userId = "expert";
 
         void Start()
         {
@@ -40,10 +43,10 @@ namespace TRTCCUnityDemo
 
             TRTCParams trtcParams = new TRTCParams();
             trtcParams.sdkAppId = GenerateTestUserSig.SDKAPPID;
-            trtcParams.roomId = uint.Parse("123456789");
+            trtcParams.roomId = roomId;
             trtcParams.strRoomId = trtcParams.roomId.ToString();
-            trtcParams.userId = DataManager.GetInstance().GetUserID();
-            trtcParams.userSig = GenerateTestUserSig.GetInstance().GenTestUserSig(DataManager.GetInstance().GetUserID());
+            trtcParams.userId = userId;
+            trtcParams.userSig = GenerateTestUserSig.GetInstance().GenTestUserSig(userId);
 
             trtcParams.privateMapKey = "";
             trtcParams.businessInfo = "";
