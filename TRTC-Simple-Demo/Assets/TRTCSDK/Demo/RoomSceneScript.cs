@@ -40,7 +40,7 @@ namespace TRTCCUnityDemo
 
             TRTCParams trtcParams = new TRTCParams();
             trtcParams.sdkAppId = GenerateTestUserSig.SDKAPPID;
-            trtcParams.roomId = uint.Parse(DataManager.GetInstance().GetRoomID());
+            trtcParams.roomId = uint.Parse("123456789");
             trtcParams.strRoomId = trtcParams.roomId.ToString();
             trtcParams.userId = DataManager.GetInstance().GetUserID();
             trtcParams.userSig = GenerateTestUserSig.GetInstance().GenTestUserSig(DataManager.GetInstance().GetUserID());
