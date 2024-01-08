@@ -348,6 +348,8 @@ namespace TRTCCUnityDemo
         public void onRemoteUserEnterRoom(String userId)
         {
             LogManager.Log(String.Format("onRemoteUserEnterRoom {0}", userId));
+            MainContext.Post(_ => { userTableView.AddUser(userId, TRTCVideoStreamType.TRTCVideoStreamTypeBig); },
+                null);
         }
         public void onRemoteUserLeaveRoom(String userId, int reason)
         {
