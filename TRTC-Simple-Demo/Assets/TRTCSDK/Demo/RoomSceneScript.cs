@@ -90,6 +90,7 @@ namespace TRTCCUnityDemo
                 Permission.RequestUserPermission(Permission.Camera);
             }
 #endif
+            OnToggleMic(true);
         }
 
         void OnDestroy()
